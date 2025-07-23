@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , include('kaf001.urls')),
+    path('', include('urlmapping.urls')),
 ]
