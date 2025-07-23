@@ -1,3 +1,5 @@
+from pydoc import describe
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -198,3 +200,17 @@ def returntxt(request):
 
 def user_detail(request, username, userid):
     return HttpResponse(f"Username: {username}, User ID: {userid}")
+
+# Mapping urls with params .
+def menuitems(request, car ):
+    items = {
+        'Pickups': 'Is a type of car that is used for transporting goods and often has an open cargo area in the back',
+        'Sedans': 'Is a type of car with a closed body and a separate trunk, typically for passengers',
+        'SUVs': 'Is a type of vehicle that combines elements of road-going passenger cars with features from off-road vehicles',
+        'Coupes': 'Is a type of car that usually has two doors and a sporty, stylish design',
+        'Convertibles': 'Is a type of car that has a roof structure that can be ' +
+                        'folded or removed for open-air driving',
+        'Hatchbacks': 'Is a type of car with a rear door that swings upward to provide access to the cargo area'
+    }
+    des= items[car]
+    return HttpResponse(f"<h1> {car} </h1> " +des)
