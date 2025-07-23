@@ -195,3 +195,6 @@ def returntxt(request):
 
     return HttpResponse(txt)
 
+
+def user_detail(request, username, userid):
+    return HttpResponse(f"Username: {username}, User ID: {userid}")
